@@ -44,8 +44,16 @@ const Login = () => {
     return (
         <>
             {error ?
-                <div className='container w-50 mt-5'>
-                    <Card>
+                <div 
+                    className='container d-flex justify-content-center align-items-center' 
+                    style={{
+                        minHeight: '100vh',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}
+                >
+                    <Card style={{ width: '350px' }}>
                         <CardHeader>
                             <h1>Error!!!</h1>
                         </CardHeader>
@@ -57,8 +65,16 @@ const Login = () => {
                         </CardFooter>
                     </Card>
                 </div> :
-                <div className='container w-50 mt-5'>
-                    <Card>
+                <div 
+                    className='container d-flex justify-content-center align-items-center' 
+                    style={{
+                        minHeight: '100vh',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}
+                >
+                    <Card style={{ width: '350px' }}>
                         <CardHeader>
                             <h2 className='text-center'>Hi {user.userName}, Login Here</h2>
                         </CardHeader>
@@ -68,18 +84,20 @@ const Login = () => {
                                     type='email' 
                                     name='userEmail' 
                                     placeholder='Enter your email' 
-                                    className='mb-2'
+                                    className='mb-3'
                                     onChange={(event) => setUserEmail(event.target.value)} value={userEmail} />
-
                                 <FormControl 
-                                autoFocus
+                                    autoFocus
                                     type='password' 
                                     name='userPass' 
                                     placeholder='Enter your password'
+                                    className='mb-3'
                                     onChange={(event) => setUserPass(event.target.value)} value={userPass} />
                             </CardBody>
                             <div className="card-footer">
-                            <Button type="submit"><h6><i className="bi bi-door-open-fill"></i> Login</h6></Button>
+                                <Button type="submit" className="w-100">
+                                    <h6><i className="bi bi-door-open-fill"></i> Login</h6>
+                                </Button>
                             </div>
                         </Form>
                     </Card>
